@@ -18,6 +18,8 @@ export const AppProvider = ({children}) => {
   }
 
   const openSubmenu = (text, coordinates) => {
+    const page = sublinks.find((link) => link.page === text);
+    setPage(page);
     setLocation(coordinates);
     setIsSubmenuOpen(true);
   }
@@ -34,6 +36,7 @@ export const AppProvider = ({children}) => {
     closeSubmenu,
     closeSidebar,
     location,
+    page,
   }} >{children}</AppContext.Provider>
 }
 
